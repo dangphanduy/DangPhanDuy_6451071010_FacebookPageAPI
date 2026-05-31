@@ -50,6 +50,28 @@ public class PageController : ControllerBase
         return Content(result, "application/json");
     }
 
+    /// <summary>
+    /// Ẩn một bình luận trên Facebook Page.
+    /// Facebook API: POST /{comment-id}?is_hidden=true
+    /// </summary>
+    [HttpPost("comment/{commentId}/hide")]
+    public async Task<IActionResult> HideComment(string commentId)
+    {
+        var result = await _facebookPageService.HideCommentAsync(commentId);
+        return Content(result, "application/json");
+    }
+
+    /// <summary>
+    /// Xóa một bình luận trên Facebook Page.
+    /// Facebook API: DELETE /{comment-id}
+    /// </summary>
+    [HttpDelete("comment/{commentId}")]
+    public async Task<IActionResult> DeleteComment(string commentId)
+    {
+        var result = await _facebookPageService.DeleteCommentAsync(commentId);
+        return Content(result, "application/json");
+    }
+
     [HttpGet("post/{postId}/likes")]
     public async Task<IActionResult> GetPostLikes(string postId)
     {
