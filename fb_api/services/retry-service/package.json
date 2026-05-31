@@ -1,0 +1,17 @@
+{
+  "name": "retry-service",
+  "version": "1.0.0",
+  "description": "Retry Service: Kafka consumer + Facebook API Retry with Exponential Backoff + DLQ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "DangPhanDuy_6451071010",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "dotenv": "^16.4.7"
+  }
+}
